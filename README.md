@@ -26,7 +26,9 @@ Diplomarbeit_Template_TGM/
 2. **Anpassen der persönlichen Daten** in den entsprechenden Dateien:
    - `frontmatter/titelseite.tex` - Titel, Name, Betreuer, etc.
    - `main.tex` Zeile 58-60 - PDF-Metadaten
-3. **Deine Kapitel hinzufügen** im `mainmatter/` Ordner
+3. **Deine Kapitel hinzufügen**:
+   - Erstelle `.tex` Dateien im `mainmatter/` Ordner (z.B. `kapitel1.tex`, `kapitel2.tex`)
+   - Füge sie in `main.tex` im Mainmatter-Bereich mit `\input{mainmatter/kapitel1}` ein
 4. **Literatur ergänzen** in `backmatter/literatur.bib`
 5. **Kompilieren** mit pdflatex + biber
 
