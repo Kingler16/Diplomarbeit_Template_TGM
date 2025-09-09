@@ -1,0 +1,135 @@
+% ===============================================
+% main.tex - Hauptdatei des Templates
+% ===============================================
+
+\documentclass[12pt,a4paper,oneside]{report}
+
+% --- Pakete und Einstellungen ---
+\usepackage[utf8]{inputenc}               % UTF-8 Eingabekodierung
+\usepackage[T1]{fontenc}                  % Zeichenkodierung
+\usepackage[ngerman]{babel}               % Deutsche Silbentrennung und Übersetzungen
+\usepackage{helvet}                      % Verbesserte Schriftart
+\usepackage{setspace}                     % Zeilenabstand
+\usepackage[left=3cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry} % Seitenränder
+\usepackage{graphicx}                     % Grafiken einbinden
+\usepackage{fancyhdr}                     % Kopf- und Fußzeilen
+\usepackage{tocbibind}                    % Verzeichnisse im Inhaltsverzeichnis anzeigen
+\usepackage{caption}                      % Verbesserte Beschriftungen
+\usepackage{float}                        % Platzierung von Abbildungen und Tabellen
+\usepackage{hyperref}                     % Hyperlinks und PDF-Metadaten
+\usepackage{booktabs}                     % Hochwertige Tabellen
+\usepackage{listings}                     % Quellcode-Listings
+\usepackage{xcolor}                       % Erweiterte Farbunterstützung
+\usepackage{glossaries}                   % Für Glossar und Abkürzungen
+\usepackage{csquotes}                     % Für Zitate
+\usepackage{titlesec}                     
+\usepackage[style=numeric,backend=biber]{biblatex} % Literaturverzeichnis
+
+% --- Pfad zur Bibliografie-Datei ---
+\addbibresource{backmatter/literatur.bib}
+
+% --- Glossar initialisieren ---
+\makeglossaries
+
+% --- Kopf- und Fußzeilen ---
+\pagestyle{fancy}
+\fancyhf{}                                % Alle Kopf- und Fußzeilenfelder leeren
+\fancyhead[LE,RO]{\thepage}               % Seitenzahl oben außen
+\fancyhead[RE]{\nouppercase{\leftmark}}   % Kapitel oben rechts auf geraden Seiten
+\fancyhead[LO]{\nouppercase{\rightmark}}  % Abschnitt oben links auf ungeraden Seiten
+\renewcommand{\headrulewidth}{0.4pt}      % Dicke der Trennlinie in der Kopfzeile
+
+% --- Einstellungen für Code-Listings ---
+\lstset{
+  basicstyle=\small\ttfamily,
+  keywordstyle=\color{blue}\bfseries,
+  commentstyle=\color{green!60!black},
+  stringstyle=\color{red},
+  numbers=left,
+  numberstyle=\tiny,
+  numbersep=5pt,
+  frame=single,
+  breaklines=true,
+  showstringspaces=false
+}
+
+% --- PDF-Metadaten ---
+\hypersetup{
+  pdftitle={Titel},
+  pdfauthor={Schueler1},
+  pdfsubject={Diplomarbeit},
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=green!50!black,
+  urlcolor=magenta
+}
+
+% --- Einrückung der Absätze deaktivieren ---
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+% --- Zeilenabstand ---
+\onehalfspacing
+
+\begin{document}
+
+% --- Kapitel Text unterdrücken ---
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}  % Format des Titels
+  {}                           % Leer - entfernt "Kapitel X"
+  {0pt}                        % Abstand zwischen Label und Titel
+  {\huge}                      % Vor dem Titel
+  []                           % Optional nach dem Titel
+
+% --- Abstand vor Kapitel weg machen ---
+\titlespacing*{\chapter}{0pt}{0pt}{10pt}
+
+% ===============================================
+% Vorspann (Frontmatter)
+% ===============================================
+
+\pagenumbering{arabic}  % Arabische Zahlen für alle Seiten
+% --- Titelseite ---
+\input{frontmatter/titelseite}
+
+% --- Eidelsstattliche Erklärung ---
+\input{frontmatter/eidesstattliche_erklaerung}
+
+% --- Kurzfassung (deutsch) ---
+\input{frontmatter/kurzfassung}
+
+% --- Kurzfassung (Englisch) ---
+\input{frontmatter/abstract}
+
+% --- Inhaltsverzeichnis ---
+\tableofcontents
+\clearpage
+
+% --- Einleitung ---
+\include{frontmatter/einleitung}
+
+% ===============================================
+% Hauptteil (Mainmatter)
+% ===============================================
+
+
+
+
+
+
+% ===============================================
+% Schlussteil (Backmatter)
+% ===============================================
+
+% --- Zusammenfassung ---
+\include{backmatter/zusammenfassung}
+
+% --- Abbildungsverzeichnis ---
+\listoffigures
+\clearpage
+
+% --- Literaturverzeichnis ---
+\nocite{*}
+\printbibliography[heading=bibintoc]
+
+\end{document}

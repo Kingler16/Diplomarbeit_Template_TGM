@@ -1,0 +1,73 @@
+% ===============================================
+% frontmatter/titlepage.tex - Titelseite der Dokumentation
+% ===============================================
+
+\begin{titlepage}
+
+    % --- Kopfzeile mit Logos und Schule ---
+    \noindent
+    \begin{minipage}[t]{0.3\textwidth}
+    \includegraphics[height=1.6cm]{bilder/schullogo.png}
+    \end{minipage}
+    \begin{minipage}[t]{0.4\textwidth}
+    \centering
+    \vspace{-1.5cm} % <-- Text etwas nach oben schieben
+    \textbf{HTBLVA Wien 20}\\
+    Höhere Lehranstalt für\\
+    Biomedizin- und Gesundheitstechnik
+    \end{minipage}
+    \begin{minipage}[t]{0.3\textwidth}
+    \raggedleft
+    \includegraphics[height=1.6cm]{bilder/HTL_Logo.png}
+    \end{minipage}
+
+
+    \vspace{2cm}
+
+    % --- Art der Arbeit ---
+    \begin{center}
+        {\large\textsc{Diplomarbeit}\par}
+        \vspace{1.5cm}
+        
+        % --- Titel und Untertitel ---
+        {\LARGE\textbf{Titel}\par}
+        \vspace{1cm}
+        {\large Untertitel \par}
+        \vspace{2.5cm}
+        
+        % --- Autoren ---
+        \begin{tabular}{ll}
+            \textbf{Verfasst von:} & Schueler1, 5xHBG - Projektleiter \\
+            & Schueler 2, 5xHBG \\
+            & Schueler 3, 5xHBG \\
+            & Schueler 4, 5xHBG \\
+        \end{tabular}
+        \vspace{1cm}
+        
+        % --- Betreuer ---
+        \begin{tabular}{ll}
+            \textbf{Betreut von:} & Lehrer\\
+        \end{tabular}
+        \vspace{1.5cm}
+        
+        ausgeführt im Schuljahr xx/xx
+        
+        \vspace{1.0cm}
+
+    \end{center}
+
+    % --- Fußzeile mit Abgabevermerk ---
+    \vfill
+\noindent
+\begin{minipage}[t]{0.5\textwidth}   % <-- [t] sorgt für top alignment
+    \textbf{Abgabevermerk:} \\
+    Datum: dd.mm.yyyy
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}   % <-- auch hier [t]
+    \raggedleft
+    \textbf{} \\
+    übernommen von: \\
+\end{minipage}
+
+
+\end{titlepage}

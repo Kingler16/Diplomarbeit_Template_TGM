@@ -1,0 +1,48 @@
+% ===============================================
+% frontmatter/eidesstattliche_erklaerung.tex - Eidesstattliche Erklärung
+% ===============================================
+
+% Signaturlinien mit Datum über der linken Linie
+\newcommand{\signatureline}[2]{%
+    \begin{minipage}[t]{0.4\textwidth}
+        \vspace{0.8cm}
+        \centering
+        #1 % Datum über der linken Linie
+        \vspace{0.1cm}\\
+        \rule{6cm}{0.4pt}\\
+        \vspace{0.05cm}
+        Ort, Datum % Beschriftung unter der Linie
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.4\textwidth}
+        \vspace{0.8cm}
+        \centering
+        \phantom{#1} % Leer über der rechten Linie  
+        \vspace{0.1cm}\\
+        \rule{6cm}{0.4pt}\\
+        \vspace{0.05cm}
+        #2 % Name unter der Linie
+    \end{minipage}
+}
+
+\chapter*{Eidesstattliche Erklärung}
+\addcontentsline{toc}{chapter}{Eidesstattliche Erklärung}
+
+Ich erkläre an Eides statt, dass ich die vorliegende Arbeit selbstständig verfasst, andere als die angegebenen Quellen/Hilfsmittel nicht benutzt und die den benutzten Quellen wörtlich und inhaltlich entnommenen Stellen als solche kenntlich gemacht habe. Für die Erstellung der Arbeit habe ich auch folgende Hilfsmittel generativer KI-Tools [z.\,B. ChatGPT, Grammarly Go, Midjourney] zu folgendem Zweck verwendet:
+\vspace{1.5cm}
+
+% Signaturfelder für handschriftliche Unterschriften
+% Verwendung: \signatureline{Datum}{Name}
+\signatureline{Wien, xx.xx.xxxx}{Schueler 1}
+
+\vspace{0.8cm}
+
+\signatureline{Wien, xx.xx.xxxx}{Schueler 2}
+
+\vspace{0.8cm}
+
+\signatureline{Wien, xx.xx.xxxx}{Schueler 3}
+
+\vspace{0.8cm}
+
+\signatureline{Wien, xx.xx.xxxx}{Schueler 4}
