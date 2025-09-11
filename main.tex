@@ -2,7 +2,7 @@
 % main.tex - Hauptdatei des Templates
 % ===============================================
 
-\documentclass[12pt,a4paper,oneside]{report}
+\documentclass[12pt,a4paper,oneside]{scrreprt}
 
 % --- Pakete und Einstellungen ---
 \usepackage[utf8]{inputenc}               % UTF-8 Eingabekodierung
@@ -10,9 +10,11 @@
 \usepackage[ngerman]{babel}               % Deutsche Silbentrennung und Übersetzungen
 \usepackage{helvet}                      % Verbesserte Schriftart
 \usepackage{setspace}                     % Zeilenabstand
-\usepackage[left=3cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry} % Seitenränder
+% Seitenränder werden über KOMA-Script Optionen gesetzt
+\KOMAoptions{paper=a4,DIV=12} % Automatische Berechnung der Seitenränder
+% Alternativ: \usepackage[left=3cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry}
 \usepackage{graphicx}                     % Grafiken einbinden
-\usepackage{fancyhdr}                     % Kopf- und Fußzeilen
+\usepackage{scrlayer-scrpage}            % Kopf- und Fußzeilen
 \usepackage{tocbibind}                    % Verzeichnisse im Inhaltsverzeichnis anzeigen
 \usepackage{caption}                      % Verbesserte Beschriftungen
 \usepackage{float}                        % Platzierung von Abbildungen und Tabellen
@@ -32,12 +34,12 @@
 \makeglossaries
 
 % --- Kopf- und Fußzeilen ---
-\pagestyle{fancy}
-\fancyhf{}                                % Alle Kopf- und Fußzeilenfelder leeren
-\fancyhead[LE,RO]{\thepage}               % Seitenzahl oben außen
-\fancyhead[RE]{\nouppercase{\leftmark}}   % Kapitel oben rechts auf geraden Seiten
-\fancyhead[LO]{\nouppercase{\rightmark}}  % Abschnitt oben links auf ungeraden Seiten
-\renewcommand{\headrulewidth}{0.4pt}      % Dicke der Trennlinie in der Kopfzeile
+\pagestyle{scrheadings}
+\clearpairofpagestyles                     % Alle Kopf- und Fußzeilenfelder leeren
+\ohead{\pagemark}                         % Seitenzahl oben außen
+\ihead{\headmark}                         % Kapitel/Abschnitt oben innen
+\setkomafont{pageheadfoot}{\normalfont}   % Schriftart für Kopf-/Fußzeile
+\setkomafont{pagehead}{\normalfont}       % Schriftart für Kopfzeile
 
 % --- Einstellungen für Code-Listings ---
 \lstset{
@@ -91,6 +93,9 @@
 \pagenumbering{arabic}  % Arabische Zahlen für alle Seiten
 % --- Titelseite ---
 \input{frontmatter/titelseite}
+
+% --- Individuelle Themenstellung ---
+\input{frontmatter/individuelle_themenstellung}
 
 % --- Eidelsstattliche Erklärung ---
 \input{frontmatter/eidesstattliche_erklaerung}
