@@ -9,6 +9,7 @@ Diplomarbeit_Template_TGM/
 ├── main.tex                    # Hauptdatei des LaTeX-Dokuments
 ├── frontmatter/               # Vorspann-Dateien
 │   ├── titelseite.tex        # Titelseite
+│   ├── individuelle_themenstellung.tex # Individuelle Themenstellung
 │   ├── eidesstattliche_erklaerung.tex
 │   ├── kurzfassung.tex       # Deutsche Zusammenfassung
 │   ├── abstract.tex          # Englische Zusammenfassung
@@ -45,7 +46,7 @@ Das Template verwendet folgende Pakete (meist in Standard-Distributionen enthalt
 **Grundpakete:**
 - `babel` (ngerman)
 - `inputenc`, `fontenc`
-- `geometry`, `setspace`
+- `setspace` - Zeilenabstand
 - `graphicx`, `float`
 
 **Erweiterte Features:**
@@ -53,7 +54,7 @@ Das Template verwendet folgende Pakete (meist in Standard-Distributionen enthalt
 - `glossaries` - Glossar und Abkürzungen
 - `hyperref` - PDF-Links und Metadaten
 - `listings`, `xcolor` - Code-Syntax-Highlighting
-- `fancyhdr` - Kopf-/Fußzeilen
+- `scrlayer-scrpage` - Moderne Kopf-/Fußzeilen (KOMA-Script)
 - `booktabs` - Professionelle Tabellen
 - `csquotes` - Korrekte Anführungszeichen
 
@@ -90,14 +91,16 @@ Das Template verwendet folgende Pakete (meist in Standard-Distributionen enthalt
 ```
 
 ### Seitenränder
-Aktuell: links 3cm, rechts 2cm, oben/unten 2.5cm
+Verwendet KOMA-Script's typographisch optimierte DIV-Berechnung:
 ```latex
-\usepackage[left=3cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry}
+\KOMAoptions{paper=a4,DIV=12} % Automatische Berechnung
+% Alternativ weiterhin möglich:
+% \usepackage[left=3cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry}
 ```
 
 ## 📚 Verwendete Standards
 
-- **Dokumentklasse:** report (einseitig, 12pt, A4)
+- **Dokumentklasse:** scrreprt (KOMA-Script, einseitig, 12pt, A4)
 - **Sprache:** Deutsch (ngerman)
 - **Kodierung:** UTF-8
 - **Zitationsstil:** Numerisch
